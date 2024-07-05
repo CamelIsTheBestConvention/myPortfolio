@@ -1,31 +1,63 @@
 <template>
   <div>
-    <div class="category">
-      <div class="category-menu">About me</div>
-      <div class="category-menu">Skill</div>
-      <div class="category-menu">Project</div>
-      <div class="category-menu">Archiving</div>
-    </div>
-    <!-- <router-link to="/about">Go to About</router-link> -->
+    <MainCategory />
+    <MainText />
   </div>
 </template>
 
 <script>
+import MainCategory from "../components/MainCategory";
+import MainText from "../components/MainText.vue";
+
 export default {
   name: "HomePage",
+  components: {
+    MainCategory,
+    MainText,
+  },
+  data() {
+    return {};
+  },
+  // mounted() {
+  //   const content = "안녕하세요 프론트엔드 개발자 \n 문성준입니다.";
+  //   const text = document.querySelector(".text");
+  //   let i = 0;
+
+  //   function typing() {
+  //     if (text) {
+  //       let txt = content[i++];
+  //       text.innerHTML += txt === "\n" ? "<br/>" : txt;
+  //       if (i > content.length) {
+  //         text.textContent = "";
+  //         i = 0;
+  //       }
+  //     }
+  //   }
+  //   setInterval(typing, 200);
+  // },
 };
 </script>
 
 <style>
-.category {
-  width: 100vw;
+.main-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
-  background-color: navy;
-  position: fixed;
-  display: flex;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 7rem;
 }
 
-.category-menu {
-  font-size: 2rem;
+.blink {
+  animation: blink 0.5s infinite;
+  font-size: 1.2rem;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
 }
 </style>
