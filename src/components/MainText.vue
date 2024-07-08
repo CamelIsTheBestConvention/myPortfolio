@@ -29,4 +29,26 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.main-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 7rem;
+}
+
+.blink {
+  animation: blink 0.5s infinite;
+  font-size: 1.2rem;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+</style>
